@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+      link(rel='stylesheet', href='/css/style.css')
+  body
+    #map_canvas
+    h1.mapViewTitle map view
+    iframe#hidden_iframe(name='hidden_iframe', style='display: none;')
+    form#GoogleForm(method='post', action='https://docs.google.com/macros/exec?service=1eTacEDHaxK75ApbJ6U_V5RS7L9hxFIlqU0FdOciz7UA', name='theForm', target='hidden_iframe')
+      p title:
+      input#name(type='text',name='name')
+      br
+      p description
+      input#comment(type='text',name='description')
+      br
+      p location
+      input#comment(type='text',name='location')
+      br
+      p site_type
+      input#comment(type='text',name='site_type')
+      br
+      br
+      input.submit(type='button', value='Submit', onclick='checkBeforeSubmit();')
+      span#success
+    include script

@@ -69,6 +69,30 @@ li.active {
 
 }
 
+#map_canvas {
+  width: 100%;
+  height:400px;
+  margin: 0 auto;
+}
+
+.mapViewTitle {
+  color: #000;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.mapMarkerLabel {
+  color: red;
+  background-color: white;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;     
+  border: 2px solid black;
+  white-space: nowrap;
+}
+
 
 
 
