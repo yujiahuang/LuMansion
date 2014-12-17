@@ -6,13 +6,11 @@
     "start": "node develop.js",
     "postinstall": "bower install"
   },
-  "devDependencies": {
-    "bower": "~1.2.8"
-  },
   "dependencies": {
     "express": "3.5.1",
     "jade": "*",
     "gulp": "^3.6.0",
+    "bower": "^1.2.8",
     "nodemon": "^1.0.17",
     "mongoose": "~3.8.1",
     "lodash": "^2.4.1",
