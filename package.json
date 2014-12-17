@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "start": "node develop.js"
-    // ,
-    // "postinstall": "bower install"
   },
   "dependencies": {
     "express": "3.5.1",
