@@ -1,0 +1,141 @@
+/*------- navbar -------*/
+#navbar {
+  border: none;
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  -webkit-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+  background: #f9f9f9;
+  color: #333;
+  padding: 0 30px 0 50px; }
+  #navbar > * {
+    height: 120px;
+    line-height: 120px;
+    float: left;
+    position: relative; }
+  #navbar[shrink=true] {
+    height: 0;
+    overflow: hidden; }
+  #navbar #brand {
+    cursor: pointer;
+    height: 120px;
+    width: 18%; }
+    #navbar #brand::before {
+      visibility: hidden; }
+    #navbar #brand #logo {
+      width: 100%;
+      height: 72px;
+      padding: 0 0 0 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: left; }
+      #navbar #brand #logo img {
+        height: 100%;
+        width: auto; }
+  #navbar #items {
+    text-align: right;
+    width: 82%;
+    font-size: 14px; }
+    #navbar #items ul {
+      display: inline-block;
+      margin: 0;
+      padding: 0 20px;
+      list-style: none; }
+      #navbar #items ul li {
+        float: left;
+        width: 100px;
+        text-align: center; }
+        #navbar #items ul li a {
+          color: #333;
+          padding: 0 0px;
+          display: block;
+          text-decoration: none;
+          white-space: nowrap;
+          position: relative;
+          top: 32px; }
+          #navbar #items ul li a::before {
+            font-size: 36px;
+            position: absolute;
+            width: 100%;
+            top: -36px;
+            left: 0;
+            text-align: center; }
+  @media (max-width: 956px) {
+    #navbar {
+      height: 240px;
+      padding: 0;
+      background: rgba(249, 249, 249, 0.85); }
+      #navbar #brand, #navbar #items {
+        float: none;
+        width: 100%;
+        height: 120px;
+        padding: 0;
+        position: relative; }
+      #navbar #brand #logo {
+        text-align: center; }
+      #navbar #items {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.05); } }
+  @media (max-width: 700px) {
+    #navbar {
+      overflow: hidden;
+      height: 120px; }
+      #navbar[expand=true] {
+        overflow: hidden;
+        height: 350px; }
+        #navbar[expand=true] #brand::before {
+          -webkit-transform: rotate(540deg);
+          -ms-transform: rotate(540deg);
+          -moz-transform: rotate(540deg);
+          -o-transform: rotate(540deg);
+          transform: rotate(540deg); }
+      #navbar #brand {
+        width: 100%;
+        height: 120px;
+        position: relative; }
+        #navbar #brand #logo {
+          text-align: center; }
+        #navbar #brand::before {
+          visibility: visible;
+          position: absolute;
+          top: 0;
+          right: 50px;
+          font-size: 24px;
+          -webkit-transition: 0.2s ease;
+          -ms-transition: 0.2s ease;
+          -moz-transition: 0.2s ease;
+          -o-transition: 0.2s ease;
+          transition: 0.2s ease; }
+      #navbar #items {
+        width: 100%;
+        height: auto;
+        padding: 10px 0 0 0; }
+        #navbar #items ul {
+          width: 100%;
+          padding: 0; }
+          #navbar #items ul li {
+            width: 50%;
+            height: 70px;
+            padding: 0 15px 0 0;
+            box-sizing: border-box; }
+            #navbar #items ul li a {
+              width: 100%;
+              font-size: 18px;
+              height: 70px;
+              line-height: 50px;
+              top: 0; }
+              #navbar #items ul li a::before {
+                font-size: 36px;
+                padding: 0 18px 0 0;
+                position: relative;
+                top: 9px; } }
+
+/*# sourceMappingURL=navbar.css.map */

@@ -1,27 +1,49 @@
 var gulp = require('gulp')
-  , livereload = require('gulp-livereload')
-  , watch = require('gulp-watch');
+  , connect = require('gulp-connect')
+  , concat = require('gulp-concat')
+  , sass = require('gulp-ruby-sass');
+
+gulp.task('connect', function() {
+  connect.server({
+    root: 'app',
+    livereload: true
+  });
+});
+
+gulp.task('html', function () {
+  gulp.src('public/js/**/*.html')
+    .pipe(connect.reload());
+});
+
+gulp.task('sass', function() {
+	gulp.src('app/scss/*.scss')
+		.pipe(sass({sourcemap: true, sourcemapPath: 'app/scss'}))
+		.on('error', function (err) { console.log(err.message); })
+		.pipe(gulp.dest('public/css/'));
+});
 
 gulp.task('css', function() {
-	gulp.src('public/css/*.css')
-		.pipe(watch())
-		.pipe(livereload());
+  gulp.src('public/css/*.css')
+    .pipe(connect.reload());
 });
 
 gulp.task('js', function() {
 	gulp.src('public/js/**/*.js')
-		.pipe(watch())
-		.pipe(livereload());
+    .pipe(connect.reload());
 });
-
 
 gulp.task('jade', function() {
 	gulp.src('views/**/*.jade')
-	    .pipe(watch())
-	    .pipe(livereload());
+    .pipe(livereload());
 });
 
-
+gulp.task('watch', function () {
+  gulp.watch(['public/js/**/*.html'], ['html']);
+  gulp.watch(['app/scss/*.scss'], ['sass']);
+  gulp.watch(['public/css/*.css'], ['css']);
+  gulp.watch(['public/js/**/*.js'], ['js']);
+  gulp.watch(['views/**/*.jade'], ['jade']);
+});
 
 gulp.task('develop', function () {
 
@@ -43,4 +65,6 @@ gulp.task('develop', function () {
 
 })
 
-gulp.task('default',[ 'develop', 'css', 'jade', 'js'])
+gulp.task('default', ['develop', 'connect', 'watch']);
+
+

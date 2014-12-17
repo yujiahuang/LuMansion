@@ -2,10 +2,28 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/css/style.css')
-    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/components/Bootflat/bootflat/css/bootflat.min.css')
-  body
+
+    link(rel='stylesheet', href='/css/layout.css')
+    link(rel='stylesheet', href='/css/navbar.css')
+    link(rel='stylesheet', href='/css/landing.css')
+    link(rel='stylesheet', href='/css/demonstration.css')
+    link(rel='stylesheet', href='/css/effects.css')
+    link(rel='stylesheet', href='/css/menu.css')
+    link(rel='stylesheet', href='/css/product.css')
+
+    link(rel='stylesheet', href='/fonts/webhostinghub-glyphs-codes.css')
+  body(ng-app='app' ng-controller="appCtrl" ng-init="init()" fix-scroll="{{fix_scroll}}")
+    #navbar(ng-click="toggleExpand()" expand="{{expand}}" shrink="{{shrink}}")
+      #brand(ui-sref="landing" icon="icon-circledown")
+        #logo
+          img(src="/images/logo4-vector-color-web.svg")
+      #items
+        ul
+          li(class="show-on-phone")
+            a(href="/" icon="icon-home") 天開藏聆
+          li(ng-repeat="item in navbar_items")
+            a(ui-sref="{{item.state}}" ng-bind="item.name" icon="{{item.icon}}")
+          .clear
     block content
     include script
     

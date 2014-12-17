@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = {
-  db: 'mongodb://localhost/meaning4-server-test'
+  db: 'mongodb://localhost/lu-jing-tang-mansion-server-test'
 };
 

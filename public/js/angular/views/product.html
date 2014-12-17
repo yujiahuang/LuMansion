@@ -1,0 +1,26 @@
+<div id="product" view-zoom>
+  <div id="info">
+    <img ng-src="/images/menu/food/{{name}}.jpg" alt="">
+    <div class="description">
+      <div class="product-title">[ 卡片名稱 ]</div>
+      <div class="product-description">卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述</div>
+    </div>
+  </div>
+  <div id="toolbox-top">
+    <div class="menu" ng-click="show_nav=true">
+      <div class="middle-bar"></div>
+    </div>
+    <div class="close" spin ui-sref="menu"></div>
+  </div>
+  <div id="toolbox-bottom"></div>
+  <div class="product-navbar" ng-show="show_nav">
+    <div class="hide-nav" ng-click="show_nav=false">
+      <div></div>
+    </div>
+    <ul>
+      <li ng-repeat="item in navbar_items">
+        <a href="" ui-sref="{{item.state}}" ng-bind="item.name"></a>
+      </li>
+    </ul>
+  </div>
+</div>

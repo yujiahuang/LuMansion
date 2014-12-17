@@ -1,0 +1,64 @@
+// browser prefixs
+
+@mixin browser-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }  
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+// sizes
+$nav-height: 120px;
+$collapsed-nav-height: 430px;
+
+// responsive sizes
+$tablet: 1040px;
+$phone: 740px;
+
+// colors
+$light-gray: #f9f9f9;
+$almost-light-gray: #eee;
+$semi-light-gray: #ccc;
+$medium-gray: #999;
+$semi-dark-gray: #666;
+$dark-gray: #333;
+$almost-black: #151515;
+
+$red: #a80d10;
+$aqua: #047a7c;
+$yellow: #faa719;
+
+// landing bricks
+$color-set: ($red, $aqua, $yellow);
+$bricks-num: 10;
+
+// other
+$animation-iteration-count: 12; // for landing instruction
+

@@ -1,0 +1,257 @@
+@import "config";
+
+/*------- effects -------*/
+
+[zoom] {
+
+  @include browser-prefix(transform, scale(1) );
+  @include browser-prefix(transition, all 1.2s ease);
+
+  &:hover {
+
+    @include browser-prefix(transform, scale(1.08) );
+
+  }
+
+}
+
+[zoom-img] {
+
+  .img-wrapper {
+    @include browser-prefix(transform, scale(1) );
+    @include browser-prefix(transition, all 1.2s ease);
+  }
+
+  &:hover {
+
+    .img-wrapper {
+      @include browser-prefix(transform, scale(1.08) );
+    }
+  }
+
+}
+
+[fade-gray] {
+
+  @include browser-prefix(transition, all 1.2s ease);
+
+  .img-wrapper::before {
+
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $light-gray;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+
+    @include browser-prefix(transition, visibility 0s linear);
+    @include browser-prefix(transition-delay, 1.2s);
+
+  }
+
+  &:hover {
+
+    .img-wrapper {
+
+      opacity: 0.8;
+
+    }
+
+    &::before {
+
+      visibility: visible;
+      @include browser-prefix(transition-delay, 0s);
+
+    }
+
+  }
+
+}
+
+[fade] {
+
+  @include browser-prefix(transition, all 1.2s ease);
+
+  &:hover {
+    .img-wrapper {
+      opacity: 0.8;
+    }
+  }
+
+}
+
+[slide-down] {
+
+  .img-wrapper {
+
+    @include browser-prefix(transition, all 1.2s ease);
+    @include browser-prefix(transform, translate(0, 0));
+    
+  }
+
+  &:hover {
+
+    .img-wrapper {
+
+      @include browser-prefix(transform, translate(0, 41%));
+      
+    }
+  }
+}
+
+[slide-up] {
+
+  .img-wrapper {
+
+    img {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    @include browser-prefix(transition, all 1.2s ease);
+    @include browser-prefix(transform, translate(0, 0));
+    
+  }
+
+  &:hover {
+
+    .img-wrapper {
+
+      @include browser-prefix(transform, translate(0, -41%));
+      
+    }
+
+  }
+
+}
+
+[spin] {
+
+  @include browser-prefix(transition, all 0.2s ease-in-out);
+
+  &:hover {
+
+    @include browser-prefix(transform, rotate(360deg));
+
+  }
+
+}
+
+[link] {
+
+  &:hover {
+
+    .link {
+
+      opacity: 1;
+      letter-spacing: 4px;
+      width: 200px;
+
+    }
+
+  }  
+
+}
+
+.link {
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 380px;
+  height: 70px;
+  text-align: center;
+  line-height: 40px;
+
+  color: $dark-gray;
+  border: 3px solid $dark-gray;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  letter-spacing: 30px;
+  cursor: pointer;
+  opacity: 0;          
+  white-space: nowrap;
+
+  @include browser-prefix(transition, all 0.5s );
+
+  &:hover {
+
+    background: rgba(255, 255, 255, 0.9);
+    color: #151515;
+    border: 3px solid #151515;
+
+  }
+
+}
+
+/*------- ui-router animation -------*/
+
+#content {
+
+  &[ui-view]{
+
+    &.ng-enter, &.ng-leave {
+      
+      position: absolute;
+      left: 0;
+      right: 0;
+      @include browser-prefix(transition, all 0.3s ease);
+      // [view-zoom]{
+      //   @include browser-prefix(transition, (all 0.3s ease, z-index 0s));
+      // }
+
+    }
+
+    &.ng-enter {
+
+      opacity: 0;
+
+      // [view-zoom]{
+      //   @include browser-prefix(transform, scale(0));
+      // }
+
+      // @include browser-prefix(transform, translate(0, -100%));
+      
+    }
+
+    &.ng-enter-active {
+
+      opacity: 1;
+
+      // [view-zoom]{
+      //   @include browser-prefix(transform, scale(1));
+      // }
+      // @include browser-prefix(transform, translate(0, 0));
+
+    }
+
+    &.ng-leave {
+
+      opacity: 1;
+
+      // [view-zoom]{
+      //   @include browser-prefix(transform, scale(1));
+      // }
+      // @include browser-prefix(transform, translate(0, 0));
+
+    }
+
+    &.ng-leave-active {
+
+      opacity: 0;
+
+      // [view-zoom]{
+      //   @include browser-prefix(transform, scale(0));
+      // }
+      // @include browser-prefix(transform, translate(0, 100%));
+
+    }
+  }
+}

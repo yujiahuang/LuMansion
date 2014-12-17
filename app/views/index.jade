@@ -1,20 +1,5 @@
 extends layout
 
 block content
-  .navbar#navbar
-    .container-fluid
-      .navbar-header#brand
-        a.navbar-brand(href="#") Brand
-      .collapse.navbar-collapse#items
-        ul.nav.navbar-nav
-          li.active
-            a(href="#") 聽聽故事
-          li
-            a(href="#") 支持我們
-          li
-            a(href="#") 關於我們
-          li
-            a(href="#") 聯絡我們
-          li
-            a(href="#") 看看地圖
-        
+  #content(ui-view)
+          

@@ -13,16 +13,16 @@ exports.server = function(){
   var config = require('../config/config');
 
   // database
-  var mongoose = require('mongoose');
+  // var mongoose = require('mongoose');
   // var db = mongoose.connect(config.db);
 
   var app = express();
-  
+
   // all environments  
   app.set('port', process.env.PORT || config.port);
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
-  app.use(express.favicon(__dirname + '/public/favicon.ico'));
+  app.use(express.favicon(__dirname + '/../public/favicon.png'));
   app.use(express.logger('dev'));
   app.use(express.json());
   app.use(express.urlencoded());

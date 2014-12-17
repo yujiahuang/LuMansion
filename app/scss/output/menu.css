@@ -1,0 +1,68 @@
+/*------- menu -------*/
+#menu {
+  width: 100%;
+  background: #bf0036;
+  position: relative; }
+  #menu .img-frame {
+    width: 25%;
+    padding: 12.5% 0;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    z-index: 100; }
+    @media (max-width: 1080px) {
+      #menu .img-frame {
+        width: 33.33%;
+        padding: 16.67% 0; } }
+    @media (max-width: 700px) {
+      #menu .img-frame {
+        width: 50%;
+        padding: 25% 0; } }
+    #menu .img-frame img {
+      width: 120%;
+      min-height: 100%;
+      position: absolute;
+      top: -9999px;
+      bottom: -9999px;
+      left: -9999px;
+      right: -9999px;
+      margin: auto; }
+  #menu .remaining-space {
+    text-align: center;
+    position: relative; }
+    #menu .remaining-space #pinkoi {
+      display: inline-block;
+      width: 25%;
+      height: 0;
+      padding: 12.5% 0 0 0; }
+      #menu .remaining-space #pinkoi a {
+        white-space: nowrap;
+        font-size: 18px;
+        color: #f9f9f9;
+        padding: 15px 20px;
+        margin: auto 10px;
+        border: 3px solid #f9f9f9;
+        letter-spacing: 2px;
+        -webkit-transition: all 1.2s ease;
+        -ms-transition: all 1.2s ease;
+        -moz-transition: all 1.2s ease;
+        -o-transition: all 1.2s ease;
+        transition: all 1.2s ease; }
+        #menu .remaining-space #pinkoi a:hover {
+          letter-spacing: 3px; }
+      @media (max-width: 1080px) {
+        #menu .remaining-space #pinkoi {
+          width: 33.33%;
+          padding: 16.67% 0; } }
+      @media (max-width: 700px) {
+        #menu .remaining-space #pinkoi {
+          width: 50%;
+          padding: 18% 0; }
+          #menu .remaining-space #pinkoi a {
+            display: inline-block;
+            white-space: normal; }
+            #menu .remaining-space #pinkoi a:hover {
+              letter-spacing: 2px; } }
+
+/*# sourceMappingURL=menu.css.map */

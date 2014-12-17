@@ -1,5 +1,5 @@
 {
-  "name": "meaning4",
+  "name": "LuJingTangMansion",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,10 +9,11 @@
     "express": "3.5.1",
     "jade": "*",
     "gulp": "^3.6.0",
-    "gulp-livereload": "^1.2.0",
-    "gulp-watch": "^0.5.3",
     "nodemon": "^1.0.17",
-    "mongoose": "^3.8.8",
-    "lodash": "^2.4.1"
+    "mongoose": "~3.8.1",
+    "lodash": "^2.4.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-concat": "^2.4.2"
   }
 }
