@@ -1,19 +1,19 @@
 /*------- product -------*/
-#product {
+.product-view {
   position: relative;
   z-index: 1200;
   background: #f9f9f9;
   height: 100%;
   box-sizing: content-box;
   color: #666; }
-  #product > * {
+  .product-view > * {
     background: #f9f9f9;
     width: 100%; }
-  #product #toolbox-top {
+  .product-view #toolbox-top {
     height: 70px;
     position: absolute;
     top: 0; }
-    #product #toolbox-top .close {
+    .product-view #toolbox-top .close {
       float: right;
       width: 70px;
       height: 70px;
@@ -21,7 +21,7 @@
       position: relative;
       text-align: center;
       cursor: pointer; }
-      #product #toolbox-top .close::before, #product #toolbox-top .close::after {
+      .product-view #toolbox-top .close::before, .product-view #toolbox-top .close::after {
         content: "";
         position: absolute;
         top: 28px;
@@ -29,32 +29,32 @@
         height: 12px;
         border-top: 2px solid #666;
         border-right: 2px solid #666; }
-      #product #toolbox-top .close::before {
+      .product-view #toolbox-top .close::before {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg);
         left: 20px; }
-      #product #toolbox-top .close::after {
+      .product-view #toolbox-top .close::after {
         -webkit-transform: rotate(-135deg);
         -ms-transform: rotate(-135deg);
         -moz-transform: rotate(-135deg);
         -o-transform: rotate(-135deg);
         transform: rotate(-135deg);
         left: 37px; }
-    #product #toolbox-top .menu {
+    .product-view #toolbox-top .menu {
       width: 73px;
       height: 72px;
       float: left;
       cursor: pointer; }
-      #product #toolbox-top .menu .middle-bar {
+      .product-view #toolbox-top .menu .middle-bar {
         position: relative;
         width: 23px;
         height: 2px;
         margin: 35px 25px;
         background: #666; }
-        #product #toolbox-top .menu .middle-bar::before, #product #toolbox-top .menu .middle-bar::after {
+        .product-view #toolbox-top .menu .middle-bar::before, .product-view #toolbox-top .menu .middle-bar::after {
           content: "";
           width: 23px;
           height: 2px;
@@ -66,51 +66,65 @@
           -moz-transition: 0.1s all ease-in-out;
           -o-transition: 0.1s all ease-in-out;
           transition: 0.1s all ease-in-out; }
-        #product #toolbox-top .menu .middle-bar::before {
+        .product-view #toolbox-top .menu .middle-bar::before {
           top: -7px; }
-        #product #toolbox-top .menu .middle-bar::after {
+        .product-view #toolbox-top .menu .middle-bar::after {
           top: 7px; }
-      #product #toolbox-top .menu:hover .middle-bar::before {
+      .product-view #toolbox-top .menu:hover .middle-bar::before {
         top: -9px;
         left: 1px; }
-      #product #toolbox-top .menu:hover .middle-bar::after {
+      .product-view #toolbox-top .menu:hover .middle-bar::after {
         top: 9px;
         left: -1px; }
-  #product #info {
+  .product-view #info {
     height: 100%;
     position: relative;
-    padding: 0 3%;
+    padding: 0 3% 3%;
     text-align: center;
-    font-size: 0; }
-    #product #info > * {
+    font-size: 0;
+    overflow: auto; }
+    .product-view #info > * {
       display: inline-block;
       vertical-align: middle;
       padding: 70px 0 0 0; }
-    #product #info .description {
-      width: 50%;
+    .product-view #info .description {
+      width: 40%;
       height: 100%;
       padding-left: 50px;
-      color: #666; }
-      #product #info .description .product-title {
-        text-align: center;
-        font-size: 24px;
-        padding: 30px 0;
-        color: #a80d10;
-        letter-spacing: 2px; }
-      #product #info .description .product-description {
+      color: #666;
+      position: absolute;
+      right: 18%; }
+      .product-view #info .description p {
         text-align: left;
         font-size: 16px;
-        line-height: 2em; }
-    #product #info img {
-      display: inline-block;
-      box-sizing: border-box;
-      max-height: 100%;
-      max-width: 50%; }
-  #product #toolbox-bottom {
+        line-height: 2em;
+        padding: 10px 0 5px 0;
+        margin: 0; }
+        .product-view #info .description p.product-title {
+          text-align: center;
+          font-size: 24px;
+          padding: 30px 0 10px 0;
+          color: #a80d10;
+          letter-spacing: 2px; }
+        .product-view #info .description p.product-subtitle, .product-view #info .description p.product-origin-title {
+          padding-top: 20px;
+          color: #a80d10;
+          text-align: center;
+          border-bottom: 1px solid #666; }
+    .product-view #info .img-wrapper {
+      width: 34%;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 8%; }
+      .product-view #info .img-wrapper img {
+        max-height: 100%;
+        max-width: 100%; }
+  .product-view #toolbox-bottom {
     height: 80px;
     position: absolute;
     bottom: 0; }
-  #product .product-navbar {
+  .product-view .product-navbar {
     width: 200px;
     height: 100%;
     position: absolute;
@@ -127,19 +141,19 @@
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-    #product .product-navbar.ng-hide {
+    .product-view .product-navbar.ng-hide {
       -webkit-transform: translate(-200px, 0);
       -ms-transform: translate(-200px, 0);
       -moz-transform: translate(-200px, 0);
       -o-transform: translate(-200px, 0);
       transform: translate(-200px, 0); }
-    #product .product-navbar .hide-nav {
+    .product-view .product-navbar .hide-nav {
       color: #f9f9f9;
       cursor: pointer;
       font-size: 18px;
       padding: 20px 30px 40px 30px;
       text-align: right; }
-      #product .product-navbar .hide-nav::before {
+      .product-view .product-navbar .hide-nav::before {
         content: "";
         position: absolute;
         width: 14px;
@@ -151,12 +165,12 @@
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg); }
-    #product .product-navbar ul {
+    .product-view .product-navbar ul {
       list-style: none;
       padding: 0;
       margin: 0;
       text-align: center; }
-      #product .product-navbar ul li a {
+      .product-view .product-navbar ul li a {
         color: #f9f9f9;
         display: block;
         padding: 10px 0;

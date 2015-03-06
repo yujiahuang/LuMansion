@@ -66,11 +66,19 @@ div {
 
 /*------- footer -------*/
 #footer {
-  height: 70px;
+  margin-left: 0;
+  width: 100%;
+  height: 120px;
   background: #333;
   color: #999;
   text-align: center;
-  line-height: 70px; }
+  padding: 30px; }
+  #footer div {
+    padding: 3px 0; }
+    #footer div p {
+      line-height: 1.4em;
+      padding: 0;
+      margin: 0; }
 
 /*------- special display -------*/
 .center-words-wrapper {

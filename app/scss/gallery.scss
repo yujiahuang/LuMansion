@@ -1,0 +1,347 @@
+@import "config";
+$animation-duration: 0.6s;
+
+/*------- gallery -------*/
+
+.gallery {
+
+  width: 100%;
+  height: 100%;
+  background: $almost-light-gray;
+  
+  .gallery-cover {
+    height: 80%;
+    min-height: 360px;
+    .instruction {
+      div {
+        @include browser-prefix(transition, all 0.3s ease);
+        &.selected {
+          background: $red;
+        }
+      }
+    }
+  }
+
+  #products {
+
+    width: 100%;
+    background: $almost-light-gray;
+
+    .product {
+
+      position: relative;
+      width: 33.333%;
+      padding: 2% 0;
+      overflow: hidden;
+      float: left;
+      cursor: pointer;
+      z-index: 100;
+      text-align: center;
+      background: $almost-light-gray;
+      color: $dark-gray;
+      box-shadow: 1px 0 0 0 $almost-light-gray;
+
+      @mixin invert-product-brick(){
+
+        color: $light-gray;
+        background: $dark-gray;
+        box-shadow: 1px 0 0 0 $dark-gray;
+        .words-wrapper{
+          .words {
+            .title {
+              color: $light-gray;
+            }
+            .detail {
+              p.description {
+                border-top: 1px solid $light-gray;
+              }
+            }
+          }
+        }
+        .img-wrapper {
+
+          border: 4px solid $light-gray;
+
+        }        
+      }
+
+      // apply colors
+      @for $i from 0 to 20 {
+
+        &[index="#{$i}"] {
+
+          $invert: false;
+          @media(min-width: $tablet){
+            @if $i%6==3 or $i%6==4 or $i%6==5 {
+              @include invert-product-brick();
+            }
+          }
+          @media(max-width: $tablet) and (min-width: $phone){
+            @if $i%4==2 or $i%4==3 {
+              @include invert-product-brick();
+            }
+          }
+          @media(max-width: $phone){
+            @if $i%2==1 {
+              @include invert-product-brick();
+            }
+          }
+        }
+      }
+
+      @media (max-width: $tablet) {
+        width: 50%;
+      }
+      @media (max-width: $phone) {
+        width: 100%;
+        padding: 4% 0;
+      }
+      
+      .img-wrapper {
+
+        width: 60%;
+        padding: 30% 0;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border-radius: 1000px;
+        border: 4px solid $semi-light-gray;
+
+        img {
+
+          width: 120%;
+          min-height: 100%;
+          position: absolute;
+          top: -9999px;
+          bottom: -9999px;
+          left: -9999px;
+          right: -9999px;
+          margin: auto;
+
+        }
+      }
+
+      .words-wrapper {
+
+        width: 100%;
+
+        .words {
+
+          .title {
+
+            color: $red;
+            h2 {
+
+              font-size: 24px;
+              font-weight: 200;
+              margin: 10px 0 6px 0;
+
+            }
+
+          }
+          .detail {
+            
+            width: 100%;
+            padding: 0 15%;
+
+            p {
+
+              font-size: 15px;
+              line-height: 1.4em;
+              padding: 4px 0;
+              margin: 0;
+
+            }
+            p.subtitle {
+              font-size: 18px;
+            }
+            p.description {
+              padding: 10px 0 0 0;
+              margin: 10px 0 0 0;
+              height: 100px;
+              text-align: left;
+              line-height: 1.7em;
+              border-top: 1px solid $dark-gray;
+            }
+            p.price {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .full-display {
+
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        // @include browser-prefix(transition, opacity ease $animation-duration);
+        @include browser-prefix(transition, (visibility 0s $animation-duration, 
+          opacity $animation-duration ease));
+
+        .img-wrapper {
+
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 0;
+          border: none;
+          background-position: center center;
+          background-repeat: no-repeat;
+          @include browser-prefix("background-size", "cover");
+
+        }
+        .words-wrapper {
+
+          color: $light-gray;
+          position: absolute;
+          display: table;
+          width: 100%;
+          height: 100%;
+          text-shadow: 0px 0px 12px black;
+
+          .words {
+
+            display: table-cell;
+            vertical-align: middle;
+
+            .title {
+              color: $light-gray;
+            }
+            .detail {
+              padding: 20px 15%;
+              border-top: 1px solid $light-gray;
+              p.description {
+                border: none;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+
+      &:hover {
+
+        .full-display {
+
+          visibility: visible;
+          opacity: 1;
+          @include browser-prefix(transition, opacity ease $animation-duration);
+
+        }
+
+      }
+
+    }
+
+    // .remaining-space {
+
+    //   text-align: center;
+    //   position: relative;
+
+    //   #some-words {
+
+    //     display: inline-block;
+    //     width: 25%;
+    //     height: 0;
+    //     padding: 12.5% 0 0 0;
+
+    //     a {
+
+    //       white-space: nowrap;
+    //       font-size: 18px;
+    //       color: $light-gray;
+    //       padding: 15px 20px;
+    //       margin: auto 10px;
+    //       border: 3px solid $light-gray;
+    //       letter-spacing: 2px;
+
+    //       @include browser-prefix(transition, all $animation-duration ease);
+
+    //       &:hover {
+
+    //         letter-spacing: 3px;
+
+    //       }
+    //     }
+
+    //     @media (max-width: $tablet) {
+
+    //       width: 33.33%;
+    //       padding: 16.67% 0;
+
+    //     }
+    //     @media (max-width: $phone) {
+
+    //       width: 50%;
+    //       padding: 18% 0;
+
+    //       a {
+
+    //         display: inline-block;
+    //         white-space: normal;
+
+    //         &:hover {
+
+    //           letter-spacing: 2px;
+
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+  }
+
+  [ui-view] {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1500;
+    visibility: hidden;
+    
+    &.ng-enter, &.ng-leave {
+      
+      @include browser-prefix(transition, all 0.3s ease);
+
+    }
+
+    &.ng-enter {
+      opacity: 0;
+      visibility: hidden;
+      @include browser-prefix(transform, scale(0));
+    }
+
+    &.ng-enter-active {
+      opacity: 1;
+      visibility: visible;
+      @include browser-prefix(transform, scale(1));
+    }
+
+    &.ng-leave {
+      opacity: 1;
+      visibility: visible;
+      @include browser-prefix(transform, scale(1));
+    }
+
+    &.ng-leave-active {
+      opacity: 0;
+      visibility: hidden;
+      @include browser-prefix(transform, scale(0));
+    }
+
+    &[show-detail="true"] {
+      visibility: visible;
+    }
+  }
+}
+

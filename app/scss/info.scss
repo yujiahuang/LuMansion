@@ -1,0 +1,50 @@
+@import "config";
+
+#info {
+
+  .contact {
+
+    text-align: center;
+
+    a {
+
+      color: #ffffff;
+      text-decoration: underline;
+
+    }
+
+  }
+    
+  .map {
+
+    width: 100%;
+    bottom: 0;
+
+    iframe {
+
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+
+      @media (max-width: $phone) {
+
+        width: 100%;
+        z-index: 1;
+
+      }
+
+    }
+  }
+
+  .map-neighbor {
+    @media (max-width: $phone) {
+
+      margin-top: 50%;
+      z-index: 1;
+      position: relative;
+
+    }    
+  }
+
+}

@@ -1,4 +1,4 @@
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $provide) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $provide, ezfbProvider) {
   
   // For any unmatched url, redirect to landing
   $urlRouterProvider.otherwise("/");
@@ -8,6 +8,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $prov
     enabled: true,
     requireBase: false
   });
+
+  // ezfb settings
+  ezfbProvider.setLocale('zh_TW');
+  ezfbProvider.setInitParams({
+    appId: '1571037283137092',
+    version: 'v2.0'
+  });
+  
+     
   
   // set up the states
   $stateProvider
@@ -16,30 +25,36 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $prov
       templateUrl: "/js/angular/views/landing.html",
       controller: 'landingCtrl'
     })
-    .state('art', {
-      url: "/art",
-      templateUrl: "/js/angular/views/art.html"
-    })
     .state('menu', {
       url: "/menu",
-      templateUrl: "/js/angular/views/menu.html",
+      templateUrl: "/js/angular/views/gallery.html",
       resolve:　{
-        galleryResource: 'menuResource',
         content: function(menuResource){
           return menuResource.get().$promise;
         }
       },
-      controller: 'menuCtrl'
+      controller: 'galleryCtrl'
     })
     .state('menu.product', {
       url: '/:name',
       templateUrl: "/js/angular/views/product.html",
       controller: 'productCtrl'
     })
-    // .state('history', {
-    //   url: "/history",
-    //   templateUrl: "/js/angular/views/history.html"
-    // })
+    .state('art', {
+      url: "/art",
+      templateUrl: "/js/angular/views/gallery.html",
+      resolve:　{
+        content: function(artResource){
+          return artResource.get().$promise;
+        }
+      },
+      controller: 'galleryCtrl'
+    })
+    .state('art.product', {
+      url: '/:name',
+      templateUrl: "/js/angular/views/product.html",
+      controller: 'productCtrl'
+    })
     .state('info', {
       url: "/info",
       templateUrl: "/js/angular/views/info.html"
@@ -48,16 +63,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $prov
       url: "/guide",
       templateUrl: "/js/angular/views/guide.html"
     })
-    // .state('story', {
-    //   url: "/story",
-    //   templateUrl: "/js/angular/views/story.html"
-    // })
     .state('about', {
       url: "/about",
       templateUrl: "/js/angular/views/about.html"
     })
-    .state('friends', {
-      url: "/friends",
-      templateUrl: "/js/angular/views/friends.html"
-    })
+    // .state('friends', {
+    //   url: "/friends",
+    //   templateUrl: "/js/angular/views/friends.html"
+    // })
 });

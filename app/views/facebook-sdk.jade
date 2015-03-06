@@ -1,0 +1,26 @@
+#fb-root
+script.
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1571037283137092', // App ID
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true,  // parse XFBML
+      version    : 'v2.0'
+    });
+
+    // Additional initialization code here
+    FB.XFBML.parse();
+
+  };
+
+  // Load the SDK Asynchronously
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=1571037283137092&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+

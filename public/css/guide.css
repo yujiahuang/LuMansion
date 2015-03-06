@@ -1,0 +1,8 @@
+@media (max-width: 1040px) {
+  #guide .row .half::before {
+    width: 100%; } }
+@media (max-width: 1040px) {
+  #guide .row .half {
+    width: 100%; } }
+
+/*# sourceMappingURL=guide.css.map */

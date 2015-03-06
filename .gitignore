@@ -27,3 +27,6 @@ node_modules
 
 # sass
 .sass-cache
+
+#images
+public/images/temp

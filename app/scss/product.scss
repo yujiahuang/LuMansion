@@ -2,7 +2,7 @@
 
 /*------- product -------*/
 
-#product {
+.product-view {
 
   position: relative;
   z-index: 1200;
@@ -126,9 +126,10 @@
 
     height: 100%;
     position: relative;
-    padding: 0 3%;
+    padding: 0 3% 3%;
     text-align: center;
     font-size: 0;
+    overflow: auto;
 
     >* {
 
@@ -140,38 +141,53 @@
 
     .description {
 
-      width: 50%;
+      width: 40%;
       height: 100%;
       padding-left: 50px;
       color: $semi-dark-gray;
-
-      .product-title {
-
-        text-align: center;
-        font-size: 24px;
-        padding: 30px 0;
-        color: $red;
-        letter-spacing: 2px;
-
-      }
+      position: absolute;
+      right: 18%;
       
-      .product-description {
+      p {
 
         text-align: left;
         font-size: 16px;
         line-height: 2em;
+        padding: 10px 0 5px 0;
+        margin: 0;
+
+        &.product-title {
+          text-align: center;
+          font-size: 24px;
+          padding: 30px 0 10px 0;
+          color: $red;
+          letter-spacing: 2px;
+        }
+        &.product-subtitle, &.product-origin-title {
+          padding-top: 20px;
+          color: $red;
+          text-align: center;
+          border-bottom: 1px solid $semi-dark-gray;
+        }
 
       }
 
     }
 
-    img {
+    .img-wrapper {
 
-      display: inline-block;
-      box-sizing: border-box;
-      max-height: 100%;
-      max-width: 50%;
+      width: 34%;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 8%;
+      
+      img {
 
+        max-height: 100%;
+        max-width: 100%;
+
+      }
     }
 
   }

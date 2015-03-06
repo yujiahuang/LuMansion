@@ -1,18 +1,23 @@
-<div id="product" view-zoom>
+<div class="product-view" id="{{state}}" view-zoom>
+  <div id="toolbox-bottom"></div>
   <div id="info">
-    <img ng-src="/images/menu/food/{{name}}.jpg" alt="">
+    <div class="img-wrapper">
+      <img ng-src="/images/{{last_state}}/{{state}}/{{product.name}}.jpg" alt="">
+    </div>
     <div class="description">
-      <div class="product-title">[ 卡片名稱 ]</div>
-      <div class="product-description">卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述卡片的描述</div>
+      <p class="product-title">[ {{product.name}} ]</p>
+      <p class="product-subtitle"><span>{{product.real_name}}</span><span ng-show="product.price>0"> / ${{product.price}}</span></p>
+      <p class="product-description" ng-bind="product.description"></p>
+      <p class="product-origin-title" ng-show="product.origin[0].length>0" ng-bind="origin_title"></p>
+      <p class="product-origin" ng-repeat="o in product.origin" ng-bind="o"></p>
     </div>
   </div>
   <div id="toolbox-top">
     <div class="menu" ng-click="show_nav=true">
       <div class="middle-bar"></div>
     </div>
-    <div class="close" spin ui-sref="menu"></div>
+    <div class="close" spin ui-sref="{{last_state}}"></div>
   </div>
-  <div id="toolbox-bottom"></div>
   <div class="product-navbar" ng-show="show_nav">
     <div class="hide-nav" ng-click="show_nav=false">
       <div></div>

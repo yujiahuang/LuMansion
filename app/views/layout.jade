@@ -6,24 +6,31 @@ html
     link(rel='stylesheet', href='/css/layout.css')
     link(rel='stylesheet', href='/css/navbar.css')
     link(rel='stylesheet', href='/css/landing.css')
+    link(rel='stylesheet', href='/css/cover.css')
+    link(rel='stylesheet', href='/css/guide.css')
     link(rel='stylesheet', href='/css/demonstration.css')
     link(rel='stylesheet', href='/css/effects.css')
-    link(rel='stylesheet', href='/css/menu.css')
+    link(rel='stylesheet', href='/css/gallery.css')
+    link(rel='stylesheet', href='/css/art.css')
     link(rel='stylesheet', href='/css/product.css')
+    link(rel='stylesheet', href='/css/info.css')
 
     link(rel='stylesheet', href='/fonts/webhostinghub-glyphs-codes.css')
   body(ng-app='app' ng-controller="appCtrl" ng-init="init()" fix-scroll="{{fix_scroll}}")
-    #navbar(ng-click="toggleExpand()" expand="{{expand}}" shrink="{{shrink}}")
-      #brand(ui-sref="landing" icon="icon-circledown")
+    #navbar(expand="{{expand}}")
+      #brand(ng-click="toggleExpand()" icon="icon-circledown")
         #logo
           img(src="/images/logo4-vector-color-web.svg")
       #items
         ul
-          li(class="show-on-phone")
-            a(href="/" icon="icon-home") 天開藏聆
-          li(ng-repeat="item in navbar_items")
-            a(ui-sref="{{item.state}}" ng-bind="item.name" icon="{{item.icon}}")
+          li(class="show-on-phone" ui-sref="landing" )
+            a(icon="icon-home") 天開藏聆
+          li(ng-repeat="item in navbar_items" ui-sref="{{item.state}}" 
+             color="{{$index%3+1}}" slide="{{$index%2}}" 
+             current="{{item.state==state}}")
+            a(ng-bind="item.name" icon="{{item.icon}}")
           .clear
     block content
+    
     include script
     

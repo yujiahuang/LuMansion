@@ -7,16 +7,22 @@ app.run(function($rootScope){
       document.body.scrollTop = document.documentElement.scrollTop = 0;
 
     // setup whether the scroll bar should be fixed
-    if(toState.name == "menu.product") $rootScope.fix_scroll = true;
-    if(fromState.name == "menu.product") $rootScope.fix_scroll = false;
+    if(toState.name == "art.product" || toState.name == "menu.product") 
+      $rootScope.fix_scroll = true;
+    if(fromState.name == "art.product" || fromState.name == "menu.product" ) 
+      $rootScope.fix_scroll = false;
+
   });
+    
   
 });
 
 function checkScrollTop(toState, fromState) {
 
-  if(fromState.name == "menu" && toState.name == "menu.product") return false;
-  else if(fromState.name == "menu.product" && toState.name == "menu") return false;
+  if( (fromState.name == "art" && toState.name == "art.product") 
+    ||(fromState.name == "menu" && toState.name == "menu.product")
+    ||(fromState.name == "art.product" && toState.name == "art")
+    ||(fromState.name == "menu.product" && toState.name == "menu")) return false;
   else return true;
 
 }

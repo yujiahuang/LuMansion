@@ -1,0 +1,206 @@
+@import "config";
+
+.cover {
+
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  position: relative;
+  background: $dark-gray;
+
+  &.dark {
+    .img-wrapper {
+
+      &::before {
+
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+
+      }
+    }
+  }
+
+  .img-wrapper {
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include browser-prefix("background-size", "cover");
+
+  }
+
+  .cover-words-wrapper{
+
+    width: 100%;
+    height: 100%;
+    text-shadow: 0px 0px 24px black;
+
+    .cover-words {
+
+      width: 100%;
+      height: 100%;
+      padding: 0 18%;
+      color: $light-gray;
+      letter-spacing: 2px;
+
+      .cover-title {
+
+        position: relative;
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
+
+        h1 {
+
+          font-size: 36px;
+          font-weight: 200;
+          padding: 0;
+          margin: 0;
+
+        }
+      }
+
+      .cover-description {
+
+        position: relative;
+        width: 100%;
+
+        span {
+
+          font-size: 19px;
+          text-align: left;
+
+        }
+        &.balance {
+
+          padding: 10px 0;
+          text-align: center;
+          span {
+            padding: 0;
+            margin: 0;
+          }
+          @media (max-width: $tablet) {
+            text-align: left;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.instruction {
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  background: rgba($dark-gray, 0.9);
+  color: $light-gray;
+  text-align: center;
+  font-size: 18px;
+  z-index: 200;
+  cursor: pointer;
+
+  div {
+
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    margin: 0;
+    line-height: 48px;
+
+  }
+
+  &.stick {
+    position: fixed;
+    top: $nav-height;
+    @media (max-width: $tablet) and (min-width: $phone) {
+      top: $nav-height*2;
+    }
+  }
+}
+
+.instruction.slide-instruction {
+
+  div {
+
+    padding: 0;
+
+    &::after {
+
+      content: "向下捲動看更多介紹";
+      letter-spacing: 2px;
+
+    }
+
+    &::before {
+
+      position: absolute;
+      line-height: 48px;
+      left: -32px;
+      font-size: 24px;
+      @include browser-prefix(transform, rotate(90deg));
+      @include animation('bounce 0.8s ease-out 0s 12 alternate');
+      @include keyframes(bounce) {
+        0% {           
+          @include browser-prefix(transform, rotate(90deg) translate(3px, 0));
+        }
+        100% { 
+          @include browser-prefix(transform, rotate(90deg) translate(-3px, 0));
+        }
+      }
+    }
+  }
+
+  &.revert {
+
+    div {
+      &::after {
+
+        content: "回到最上方";
+
+      }
+
+      &::before {
+
+        position: absolute;
+        left: -32px;
+        font-size: 24px;
+        @include browser-prefix(transform, rotate(-90deg));
+        @include animation('bounce-revert 0.8s ease-out 0s 12 alternate');
+        @include keyframes(bounce-revert) {
+          0% {           
+            @include browser-prefix(transform, rotate(-90deg) translate(3px, 0));
+          }
+          100% { 
+            @include browser-prefix(transform, rotate(-90deg) translate(-3px, 0));
+          }
+        }
+      }
+    }
+  }
+
+  @media(max-width: $tablet) {
+    display: none;
+  }
+  @media(max-width: $phone) {
+    display: block;
+  }
+
+}
+
+
+

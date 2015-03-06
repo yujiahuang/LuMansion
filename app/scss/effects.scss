@@ -7,10 +7,12 @@
   @include browser-prefix(transform, scale(1) );
   @include browser-prefix(transition, all 1.2s ease);
 
-  &:hover {
 
-    @include browser-prefix(transform, scale(1.08) );
+  @media (min-width: $phone) {
+    &:hover {
 
+      @include browser-prefix(transform, scale(1.08) );
+    }
   }
 
 }
@@ -22,10 +24,12 @@
     @include browser-prefix(transition, all 1.2s ease);
   }
 
-  &:hover {
+  @media (min-width: $phone) {
+    &:hover {
 
-    .img-wrapper {
-      @include browser-prefix(transform, scale(1.08) );
+      .img-wrapper {
+        @include browser-prefix(transform, scale(1.08) );
+      }
     }
   }
 
@@ -51,21 +55,22 @@
 
   }
 
-  &:hover {
+  @media (min-width: $phone) {
+    &:hover {
 
-    .img-wrapper {
+      .img-wrapper {
 
-      opacity: 0.8;
+        opacity: 0.8;
 
+      }
+
+      &::before {
+
+        visibility: visible;
+        @include browser-prefix(transition-delay, 0s);
+
+      }
     }
-
-    &::before {
-
-      visibility: visible;
-      @include browser-prefix(transition-delay, 0s);
-
-    }
-
   }
 
 }
@@ -74,9 +79,11 @@
 
   @include browser-prefix(transition, all 1.2s ease);
 
-  &:hover {
-    .img-wrapper {
-      opacity: 0.8;
+  @media (min-width: $phone) {
+    &:hover {
+      .img-wrapper {
+        opacity: 0.8;
+      }
     }
   }
 
@@ -91,12 +98,14 @@
     
   }
 
-  &:hover {
+  @media (min-width: $phone) {
+    &:hover {
 
-    .img-wrapper {
+      .img-wrapper {
 
-      @include browser-prefix(transform, translate(0, 41%));
-      
+        @include browser-prefix(transform, translate(0, 41%));
+        
+      }  
     }
   }
 }
@@ -115,14 +124,16 @@
     
   }
 
-  &:hover {
+  @media (min-width: $phone) {
 
-    .img-wrapper {
+    &:hover {
 
-      @include browser-prefix(transform, translate(0, -41%));
-      
+      .img-wrapper {
+
+        @include browser-prefix(transform, translate(0, -41%));
+        
+      }
     }
-
   }
 
 }
@@ -131,26 +142,30 @@
 
   @include browser-prefix(transition, all 0.2s ease-in-out);
 
-  &:hover {
+  @media (min-width: $phone) {
 
-    @include browser-prefix(transform, rotate(360deg));
+    &:hover {
 
+      @include browser-prefix(transform, rotate(360deg));
+    }
   }
 
 }
 
 [link] {
 
-  &:hover {
+  @media (min-width: $phone) {
 
-    .link {
+    &:hover {
 
-      opacity: 1;
-      letter-spacing: 4px;
-      width: 200px;
+      .link {
 
+        opacity: 1;
+        letter-spacing: 4px;
+        width: 250px;
+
+      }
     }
-
   }  
 
 }
@@ -181,12 +196,14 @@
 
   @include browser-prefix(transition, all 0.5s );
 
-  &:hover {
+  @media (min-width: $phone) {
+    &:hover {
 
-    background: rgba(255, 255, 255, 0.9);
-    color: #151515;
-    border: 3px solid #151515;
+      background: rgba(255, 255, 255, 0.9);
+      color: #151515;
+      border: 3px solid #151515;
 
+    }
   }
 
 }

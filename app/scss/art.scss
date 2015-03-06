@@ -1,0 +1,23 @@
+@import "config";
+
+
+#art.gallery {
+  #art-cover {
+    .instruction {
+      display: none;
+    }
+  }
+  #products {
+    .product {
+      .words-wrapper {
+        .words {
+          .detail {
+            p.description {
+              height: 120px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

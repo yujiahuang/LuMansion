@@ -1,22 +1,4 @@
 <div class="demonstration" id="about">
-  <!-- <div id="cover">
-    <div class='img-wrapper'>
-      <img src="/images/art/cover.jpg" alt="">
-    </div>
-    <div class="cover-words-wrapper center-words-wrapper">
-      <div class="cover-words center-words">
-        <div class="cover-title">
-          <h1>天開藏聆</h1>
-          <h2>異想盧經堂厝</h2>
-          <div class="clear"></div>
-        </div>
-        <div class="cover-description">
-          <p>叫他做圓通大師，想了一想，三個紡錘，我正合了眼坐著。是悵惘，雖則我聽說他的名字常在你的口邊。那太可愛？孔乙已是這樣的使人快活，但是不再賣水果，不要取笑，馬也就站住？獨立支持，老子都不老子呀，話還沒說完！意圖把我們貶為被擊落專用鐵棺材。</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="row">
     <div class="half invert" color='1'>
       <div class="words-wrapper center-words-wrapper">
@@ -89,7 +71,9 @@
   </div>
 
   <div id="footer">
-    (聯絡資訊等等)
+    <div>
+      <p ng-repeat="i in footer_items">{{i}}</p>
+    </div>
   </div>
 </div>
 

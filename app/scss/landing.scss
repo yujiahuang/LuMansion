@@ -8,7 +8,7 @@
   height: 100%;
   position: relative;
 
-  #cover {
+  #landing-cover {
 
     width: 100%;
     height: 100%;
@@ -18,12 +18,9 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      img {
-
-        width: 100%;
-        height: auto;
-
-      }
+      background-repeat: no-repeat;
+      background-position: center center;
+      @include browser-prefix("background-size", "cover");
     }
 
     .cover-titles {
@@ -37,10 +34,11 @@
       height: 50%;
       min-height: 160px;
       
+      
       h1, h2 {
 
-        opacity: 0.95;
-        display: inline-block;
+        opacity: 0.8;
+        float: right;
         background: $light-gray;
         color: $dark-gray;
         padding: 20px 40px;
@@ -77,120 +75,47 @@
 
       }
     }
-
-    .instruction {
-
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 48px;
-      background: rgba($dark-gray, 0.9);
-      color: $light-gray;
-      text-align: center;
-      font-size: 18px;
-      z-index: 2;
-      cursor: pointer;
-
-      div {
-
-        display: inline-block;
-        position: relative;
-        padding: 0;
-        margin: 0;
-        line-height: 48px;
-
-        &::after {
-
-          content: "向下捲動看更多介紹";
-          letter-spacing: 2px;
-
-        }
-
-        &::before {
-
-          position: absolute;
-          line-height: 48px;
-          left: -32px;
-          font-size: 24px;
-          @include browser-prefix(transform, rotate(90deg));
-          @include animation('bounce 0.8s ease-out 0s 12 alternate');
-          @include keyframes(bounce) {
-            0% {           
-              @include browser-prefix(transform, rotate(90deg) translate(3px, 0));
-            }
-            100% { 
-              @include browser-prefix(transform, rotate(90deg) translate(-3px, 0));
-            }
-          }
-        }
-      }
-
-      &.stick {
-        position: fixed;
-        top: $nav-height;
-        @media(max-width: $tablet) {
-          display: none;
-        }
-        @media(max-width: $phone) {
-          display: block;
-        }
-      }
-      &.revert {
-
-        div {
-
-
-          &::after {
-
-            content: "回到最上方";
-
-          }
-
-          &::before {
-
-            position: absolute;
-            left: -32px;
-            font-size: 24px;
-            @include browser-prefix(transform, rotate(-90deg));
-            @include animation('bounce-revert 0.8s ease-out 0s 12 alternate');
-            @include keyframes(bounce-revert) {
-              0% {           
-                @include browser-prefix(transform, rotate(-90deg) translate(3px, 0));
-              }
-              100% { 
-                @include browser-prefix(transform, rotate(-90deg) translate(-3px, 0));
-              }
-            }
-          }
-        }
-      }
-
-    }
   }
 
   #bricks {
 
     position: relative;
     height: 100%;
-    // width: 100%;
     width: 94%;
     left: 3%;
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      left: 0;
+    }
+    @media (max-width: $phone) {
+      width: 100%;
+      left: 0;
+    }
+    @media (min-width: $laptop) {
+      width: 1504px;
+      position: static;
+      margin: 0 auto;
+      left: 0;
+    }
 
     .brick {
 
       position: relative;
       float: left;
       width: 33.33%;
-      height: 40%;
-      min-height: 267px;
+      height: 266px;
       overflow: hidden;
       text-align: center;
 
       &.high-brick {
 
-        height: 80%;
-        min-height: 534px;
+        height: 532px;
 
+      }
+
+      &[ui-sref]{
+        cursor: pointer;
       }
 
       .img-wrapper {
@@ -198,6 +123,11 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include browser-prefix("background-size", "cover");
+
+        // background-size: cover;
         &[background] {
 
           opacity: 0.15;
@@ -206,12 +136,12 @@
           top: 0;
 
         }
-        img {
+        // img {
 
-          max-width: 100%;
-          min-height: 100%;
+        //   max-width: 100%;  
+        //   max-height: 100%;  
           
-        }
+        // }
       }
 
       // apply colors
@@ -230,11 +160,7 @@
             box-shadow: 0px 0px 0 20px rgba($almost-light-gray, 0.9);
             @include browser-prefix(transition, all 0.1s linear);
             z-index: 1;
-            // &:hover{
 
-            //   box-shadow: 0px 0px 0 20px rgba($red, 0.9);
-              
-            // }
           }
         }
         &.invert[color="#{$i}"] {
@@ -251,13 +177,34 @@
             box-shadow: 0px 0px 0 20px rgba(nth($color-set, $i), 0.9);
             @include browser-prefix(transition, all 0.1s linear);
             z-index: 1;
-            // &:hover{
-
-            //   box-shadow: 0px 0px 0 20px rgba($red, 0.9);
-              
-            // }
           }
         }
+      }
+
+      .title {
+
+        width: 100%;
+        padding: 30px 0 0 0;
+        text-align: center;
+        font-size: 24px;
+
+        h2 {
+          margin: 0;
+        }
+      }
+
+      .description {
+
+        padding: 0 15% 20px 15%;
+        text-align: justify;
+        font-size: 18px;
+
+      }
+
+      .fb-like-box {
+
+        width: 100%;
+        
       }
 
       @media (max-width: $tablet) {
@@ -273,6 +220,29 @@
       }
 
     }
+
+    #footer {
+
+      margin-left: -3.19%;
+      width: 106.38%;
+
+      div {
+
+        padding: 14px 0;
+
+      }
+      @media (max-width: $tablet) {
+        width: 100%;
+        margin-left: 0;
+      }
+      @media (min-width: $laptop) {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
   }
 }
 
@@ -290,28 +260,8 @@
     > * {
 
       width: 100%;
-      padding: 15px 15%;
 
     }
-
-    .title {
-
-      text-align: center;
-      font-size: 24px;
-
-      h2 {
-        margin: 0;
-      }
-
-    }
-
-    .description {
-
-      text-align: justify;
-      font-size: 18px;
-
-    }
-
   }
 }
 
@@ -328,7 +278,6 @@
     width: 100%;
     display: table-cell;
     vertical-align: middle;
-    // color: $light-gray;
     padding: 15px 15%;
     text-align: justify;
     font-size: 18px;
@@ -362,7 +311,6 @@
     display: table-cell;
     vertical-align: middle;
     width: 100%;
-    // color: $light-gray;
     padding: 15px 15%;
     text-align: justify;
     font-size: 18px;

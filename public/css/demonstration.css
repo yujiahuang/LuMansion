@@ -1,140 +1,186 @@
-@charset "UTF-8";
 .demonstration {
   width: 100%;
-  height: 100%; }
-  .demonstration #cover {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    position: relative; }
-    .demonstration #cover .img-wrapper {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: absolute;
-      top: 0; }
-      .demonstration #cover .img-wrapper::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.3); }
-      .demonstration #cover .img-wrapper img {
-        width: 100%;
-        height: auto; }
-    .demonstration #cover .cover-words-wrapper {
-      width: 100%;
-      height: 100%;
-      text-shadow: 0px 0px 24px black; }
-      .demonstration #cover .cover-words-wrapper .cover-words {
-        width: 100%;
-        height: 100%;
-        padding: 0 18%;
-        color: #f9f9f9;
-        letter-spacing: 2px; }
-        .demonstration #cover .cover-words-wrapper .cover-words .cover-title {
-          position: relative;
-          text-align: center;
-          width: 100%;
-          white-space: nowrap; }
-          .demonstration #cover .cover-words-wrapper .cover-words .cover-title h1 {
-            font-size: 36px;
-            font-weight: 200;
-            padding: 0;
-            margin: 0;
-            display: inline-block; }
-            @media (max-width: 1040px) {
-              .demonstration #cover .cover-words-wrapper .cover-words .cover-title h1 {
-                display: block; } }
-          .demonstration #cover .cover-words-wrapper .cover-words .cover-title h2 {
-            padding: 0;
-            margin: 0;
-            font-size: 36px;
-            font-weight: 200;
-            display: inline-block; }
-            .demonstration #cover .cover-words-wrapper .cover-words .cover-title h2::before {
-              content: "・"; }
-            @media (max-width: 1040px) {
-              .demonstration #cover .cover-words-wrapper .cover-words .cover-title h2 {
-                font-size: 26px;
-                display: block; }
-                .demonstration #cover .cover-words-wrapper .cover-words .cover-title h2::before {
-                  content: ""; } }
-        .demonstration #cover .cover-words-wrapper .cover-words .cover-description {
-          position: relative;
-          width: 100%; }
-          .demonstration #cover .cover-words-wrapper .cover-words .cover-description p {
-            font-size: 18px;
-            text-align: left; }
+  height: 100%;
+  position: relative; }
   .demonstration .row {
-    position: relative;
-    height: 100%; }
-    .demonstration .row .half[color="1"], .demonstration .row .full[color="1"] {
-      color: #333;
-      background: #eee; }
-      .demonstration .row .half[color="1"] .title, .demonstration .row .full[color="1"] .title {
-        color: #a80d10; }
-    .demonstration .row .half.invert[color="1"], .demonstration .row .full.invert[color="1"] {
-      color: #f9f9f9;
-      background: #a80d10; }
-      .demonstration .row .half.invert[color="1"] .title, .demonstration .row .full.invert[color="1"] .title {
-        color: #f9f9f9; }
-    .demonstration .row .half[color="2"], .demonstration .row .full[color="2"] {
-      color: #333;
-      background: #eee; }
-      .demonstration .row .half[color="2"] .title, .demonstration .row .full[color="2"] .title {
-        color: #047a7c; }
-    .demonstration .row .half.invert[color="2"], .demonstration .row .full.invert[color="2"] {
-      color: #f9f9f9;
-      background: #047a7c; }
-      .demonstration .row .half.invert[color="2"] .title, .demonstration .row .full.invert[color="2"] .title {
-        color: #f9f9f9; }
-    .demonstration .row .half[color="3"], .demonstration .row .full[color="3"] {
-      color: #333;
-      background: #eee; }
-      .demonstration .row .half[color="3"] .title, .demonstration .row .full[color="3"] .title {
-        color: #faa719; }
-    .demonstration .row .half.invert[color="3"], .demonstration .row .full.invert[color="3"] {
-      color: #f9f9f9;
-      background: #faa719; }
-      .demonstration .row .half.invert[color="3"] .title, .demonstration .row .full.invert[color="3"] .title {
-        color: #f9f9f9; }
+    position: relative; }
+    .demonstration .row .half, .demonstration .row .full {
+      padding: 5% 0;
+      overflow: hidden; }
+      .demonstration .row .half .words-wrapper, .demonstration .row .full .words-wrapper {
+        width: 100%;
+        height: 100%; }
+        .demonstration .row .half .words-wrapper .words, .demonstration .row .full .words-wrapper .words {
+          width: 100%;
+          height: 100%;
+          padding: 0 18%; }
+          .demonstration .row .half .words-wrapper .words .title, .demonstration .row .full .words-wrapper .words .title {
+            text-align: center; }
+            .demonstration .row .half .words-wrapper .words .title h2, .demonstration .row .full .words-wrapper .words .title h2 {
+              font-size: 36px;
+              font-weight: 200;
+              margin: 0 0 30px 0; }
+          .demonstration .row .half .words-wrapper .words .description, .demonstration .row .full .words-wrapper .words .description {
+            font-size: 20px;
+            font-weight: 200;
+            text-align: justify; }
+            .demonstration .row .half .words-wrapper .words .description p, .demonstration .row .full .words-wrapper .words .description p {
+              line-height: 2em;
+              margin: 15px 0;
+              padding: 0;
+              position: relative; }
+            .demonstration .row .half .words-wrapper .words .description ul, .demonstration .row .full .words-wrapper .words .description ul {
+              list-style-type: square;
+              list-style-position: inside; }
+            .demonstration .row .half .words-wrapper .words .description.center, .demonstration .row .full .words-wrapper .words .description.center {
+              text-align: center;
+              white-space: nowrap; }
+              .demonstration .row .half .words-wrapper .words .description.center p, .demonstration .row .full .words-wrapper .words .description.center p {
+                line-height: 1.7em; }
+            @media (max-width: 740px) {
+              .demonstration .row .half .words-wrapper .words .description.balance p, .demonstration .row .full .words-wrapper .words .description.balance p {
+                margin: 25px 0; }
+              .demonstration .row .half .words-wrapper .words .description.balance p + p::before, .demonstration .row .full .words-wrapper .words .description.balance p + p::before {
+                content: ".";
+                position: absolute;
+                width: 10%;
+                text-align: center;
+                left: 45%;
+                top: -38px;
+                font-size: 36px; } }
+            @media (min-width: 740px) {
+              .demonstration .row .half .words-wrapper .words .description.balance br, .demonstration .row .full .words-wrapper .words .description.balance br {
+                display: none; } }
+      .demonstration .row .half[color="1"], .demonstration .row .full[color="1"] {
+        color: #333;
+        background: #eee; }
+        @media (min-width: 740px) {
+          .demonstration .row .half[color="1"]::before, .demonstration .row .full[color="1"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            background: #eee;
+            height: 100%;
+            z-index: -1; } }
+        .demonstration .row .half[color="1"] .title, .demonstration .row .full[color="1"] .title {
+          color: #a80d10; }
+      .demonstration .row .half.invert[color="1"], .demonstration .row .full.invert[color="1"] {
+        color: #eee;
+        background: #a80d10; }
+        @media (min-width: 740px) {
+          .demonstration .row .half.invert[color="1"]::before, .demonstration .row .full.invert[color="1"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            background: #a80d10;
+            height: 100%;
+            z-index: -1; } }
+        .demonstration .row .half.invert[color="1"] .title, .demonstration .row .full.invert[color="1"] .title {
+          color: #f9f9f9; }
+      .demonstration .row .half[color="2"], .demonstration .row .full[color="2"] {
+        color: #333;
+        background: #eee; }
+        @media (min-width: 740px) {
+          .demonstration .row .half[color="2"]::before, .demonstration .row .full[color="2"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            background: #eee;
+            height: 100%;
+            z-index: -1; } }
+        .demonstration .row .half[color="2"] .title, .demonstration .row .full[color="2"] .title {
+          color: #047a7c; }
+      .demonstration .row .half.invert[color="2"], .demonstration .row .full.invert[color="2"] {
+        color: #eee;
+        background: #047a7c; }
+        @media (min-width: 740px) {
+          .demonstration .row .half.invert[color="2"]::before, .demonstration .row .full.invert[color="2"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            background: #047a7c;
+            height: 100%;
+            z-index: -1; } }
+        .demonstration .row .half.invert[color="2"] .title, .demonstration .row .full.invert[color="2"] .title {
+          color: #f9f9f9; }
+      .demonstration .row .half[color="3"], .demonstration .row .full[color="3"] {
+        color: #333;
+        background: #eee; }
+        @media (min-width: 740px) {
+          .demonstration .row .half[color="3"]::before, .demonstration .row .full[color="3"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            background: #eee;
+            height: 100%;
+            z-index: -1; } }
+        .demonstration .row .half[color="3"] .title, .demonstration .row .full[color="3"] .title {
+          color: #faa719; }
+      .demonstration .row .half.invert[color="3"], .demonstration .row .full.invert[color="3"] {
+        color: #eee;
+        background: #faa719; }
+        @media (min-width: 740px) {
+          .demonstration .row .half.invert[color="3"]::before, .demonstration .row .full.invert[color="3"]::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            background: #faa719;
+            height: 100%;
+            z-index: -1; } }
+        .demonstration .row .half.invert[color="3"] .title, .demonstration .row .full.invert[color="3"] .title {
+          color: #f9f9f9; }
     .demonstration .row .half {
       width: 50%;
-      height: 100%;
       float: left; }
-      .demonstration .row .half .words-wrapper {
+      @media (max-width: 1040px) {
+        .demonstration .row .half::before {
+          width: 100%; } }
+      @media (max-width: 1040px) {
+        .demonstration .row .half {
+          width: 100%; } }
+      .demonstration .row .half .words-wrapper .words .img-wrapper {
         width: 100%;
-        height: 60%; }
-        .demonstration .row .half .words-wrapper .words {
+        height: 0;
+        padding: 0 0 100% 0; }
+        .demonstration .row .half .words-wrapper .words .img-wrapper img {
           width: 100%;
-          height: 100%;
-          padding: 0 18%; }
-          .demonstration .row .half .words-wrapper .words .title {
-            font-size: 24px;
-            text-align: center; }
-            .demonstration .row .half .words-wrapper .words .title h2 {
-              font-weight: 200; }
-          .demonstration .row .half .words-wrapper .words .description {
-            font-size: 16px; }
+          height: auto;
+          border-radius: 1000px;
+          box-sizing: border-box; }
+      .demonstration .row .half::before {
+        width: 50%; }
+        @media (max-width: 740px) {
+          .demonstration .row .half::before {
+            width: 100%; } }
+      @media (max-width: 740px) {
+        .demonstration .row .half {
+          width: 100%; } }
     .demonstration .row .full {
       width: 100%;
-      height: 100%; }
-      .demonstration .row .full .words-wrapper {
-        width: 100%;
-        height: 60%; }
-        .demonstration .row .full .words-wrapper .words {
+      min-height: 100%; }
+      .demonstration .row .full::before {
+        width: 100%; }
+      .demonstration .row .full .words-wrapper .words .description .img-wrapper {
+        width: 50%;
+        height: 0;
+        padding: 0 0 50% 0;
+        position: relative;
+        left: 25%; }
+        @media (max-width: 740px) {
+          .demonstration .row .full .words-wrapper .words .description .img-wrapper {
+            width: 100%;
+            padding: 0 0 100% 0;
+            left: 0%; } }
+        .demonstration .row .full .words-wrapper .words .description .img-wrapper img {
           width: 100%;
-          height: 100%;
-          padding: 0 18%; }
-          .demonstration .row .full .words-wrapper .words .title {
-            font-size: 24px;
-            text-align: center; }
-            .demonstration .row .full .words-wrapper .words .title h2 {
-              font-weight: 200; }
-          .demonstration .row .full .words-wrapper .words .description {
-            font-size: 16px; }
+          height: auto;
+          border-radius: 1000px;
+          box-sizing: border-box; }
+
+.words-wrapper .words .img-wrapper img {
+  border: 4px solid #ccc; }
+
+.invert .words-wrapper .words .img-wrapper img {
+  border: 4px solid #f9f9f9; }
 
 /*# sourceMappingURL=demonstration.css.map */

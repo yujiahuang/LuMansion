@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "mappings": "AAOQ,0BAA4B;EAD9B,yBAAU;IAEN,KAAK,EAAE,IAAI;AAGf,0BAA4B;EAP9B,iBAAM;IAQF,KAAK,EAAE,IAAI",
+  "sources": [
+    "app/scss/guide.scss"
+  ],
+  "names": [],
+  "file": "guide.css"
+}

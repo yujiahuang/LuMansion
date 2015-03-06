@@ -1,0 +1,17 @@
+@import "config";
+
+#guide {
+  .row {
+    .half {
+
+      &::before {
+        @media (max-width: $tablet) {
+          width: 100%;
+        }
+      }
+      @media (max-width: $tablet) {
+        width: 100%;
+      }
+    }
+  }
+}

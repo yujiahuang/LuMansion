@@ -4,146 +4,126 @@
 
   width: 100%;
   height: 100%;
-  
-  #cover {
-
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    position: relative;
-
-    .img-wrapper {
-
-      &::before {
-
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.3);
-
-      }
-
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-
-      img {
-
-        width: 100%;
-        height: auto;
-
-      }
-
-    }
-
-    .cover-words-wrapper{
-
-      width: 100%;
-      height: 100%;
-      text-shadow: 0px 0px 24px black;
-
-      .cover-words {
-
-        width: 100%;
-        height: 100%;
-        padding: 0 18%;
-        color: $light-gray;
-        letter-spacing: 2px;
-
-        .cover-title {
-
-          position: relative;
-          text-align: center;
-          width: 100%;
-          white-space: nowrap;
-
-          h1 {
-
-            font-size: 36px;
-            font-weight: 200;
-            padding: 0;
-            margin: 0;
-            display: inline-block;
-
-            @media (max-width: $tablet){
-
-              display: block;
-
-            }
-
-          }
-
-          h2 {
-
-            padding: 0;
-            margin: 0;
-            font-size: 36px;
-            font-weight: 200;
-            display: inline-block;
-
-            &::before {
-
-              content: "・";
-
-            }
-
-            @media (max-width: $tablet){
-
-              font-size: 26px;
-              display: block;
-
-              &::before {
-
-                content: "";
-
-              }
-            }
-
-          }
-
-        }
-
-        .cover-description {
-
-          position: relative;
-          width: 100%;
-
-          p {
-
-            font-size: 18px;
-            text-align: left;
-
-          }
-
-        }
-      }
-    }
-  }
+  position: relative;
 
   .row {
 
     position: relative;
-    height: 100%;
 
     .half, .full {
+
+      padding: 5% 0;
+      overflow: hidden;
+
+      .words-wrapper{
+
+        width: 100%;
+        height: 100%;
+
+        .words {
+
+          width: 100%;
+          height: 100%;
+          padding: 0 18%;
+
+          .title {
+
+            text-align: center;
+
+            h2 {
+
+              font-size: 36px;
+              font-weight: 200;
+              margin: 0 0 30px 0;
+
+            }
+          }
+            
+          .description {
+
+            font-size: 20px;
+            font-weight: 200;
+            text-align: justify;
+            p {
+              line-height: 2em;
+              margin: 15px 0;
+              padding: 0;
+              position: relative;
+            }
+            ul {
+              list-style-type: square;
+              list-style-position: inside;
+            }
+            &.center {
+              text-align: center;
+              white-space: nowrap;
+              p {
+                line-height: 1.7em;
+              }
+            }
+            &.balance {
+
+              @media(max-width: $phone){
+                p {
+                  margin: 25px 0;
+                }
+                p+p::before {
+
+                  content: ".";
+                  position: absolute;
+                  width: 10%;
+                  text-align: center;
+                  left: 45%;
+                  top: -38px;
+                  font-size: 36px;
+
+                }
+              }
+              @media(min-width: $phone){
+                br {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
 
       // apply color
       @for $i from 1 to length($color-set)+1 {
 
         &[color="#{$i}"] {
           color: $dark-gray;
+
+          @media(min-width: $phone){
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              background: $almost-light-gray;
+              height: 100%;
+              z-index: -1;
+            }
+          }
           background: $almost-light-gray;
+
           .title{
             color: nth($color-set, $i);
           }
         }
         &.invert[color="#{$i}"] {
-          color: $light-gray;
+          color: $almost-light-gray;
+          @media(min-width: $phone){
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              background: nth($color-set, $i);
+              height: 100%;
+              z-index: -1;
+            }
+          }
           background: nth($color-set, $i);
           .title{
             color: $light-gray;
@@ -156,76 +136,102 @@
     .half {
 
       width: 50%;
-      height: 100%;
       float: left;
 
-      .words-wrapper{
-
-        width: 100%;
-        height: 60%;
-
-        .words {
-
+      &::before {
+        @media (max-width: $tablet) {
           width: 100%;
-          height: 100%;
-          padding: 0 18%;
+        }
+      }
+      @media (max-width: $tablet) {
+        width: 100%;
+      }
 
-          .title {
+      .words-wrapper {
+        .words {
+          .img-wrapper {
 
-            font-size: 24px;
-            text-align: center;
+            width: 100%;
+            height: 0;
+            padding: 0 0 100% 0;
 
-            h2 {
-
-              font-weight: 200;
-
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 1000px;
+              box-sizing: border-box;
+            
             }
 
           }
-          .description {
-
-            font-size: 16px;
-
-          }
         }
+      }
+
+      &::before {
+
+        width: 50%;
+        @media (max-width: $phone) {
+
+          width: 100%;
+
+        }
+      }
+
+      @media (max-width: $phone) {
+
+        width: 100%;
+
       }
     }
 
     .full {
 
       width: 100%;
-      height: 100%;
-
-      .words-wrapper{
+      min-height: 100%;
+      &::before {
 
         width: 100%;
-        height: 60%;
 
+      }
+      .words-wrapper {
         .words {
-
-          width: 100%;
-          height: 100%;
-          padding: 0 18%;
-
-          .title {
-
-            font-size: 24px;
-            text-align: center;
-
-            h2 {
-
-              font-weight: 200;
-
-            }
-
-          }
           .description {
+            .img-wrapper {
 
-            font-size: 16px;
+              width: 50%;
+              height: 0;
+              padding: 0 0 50% 0;
+              position: relative;
+              left: 25%;
 
+              @media (max-width: $phone) {
+                width: 100%;
+                padding: 0 0 100% 0;
+                left: 0%;
+              }
+
+              img {
+                width: 100%;
+                height: auto;
+                border-radius: 1000px;
+                box-sizing: border-box;
+
+              }
+            }
           }
         }
       }
     }
   }
 }
+
+
+.words-wrapper .words .img-wrapper img {
+  border: 4px solid $semi-light-gray;
+}
+.invert .words-wrapper .words .img-wrapper img {
+  border: 4px solid $light-gray;
+}
+
+
+
