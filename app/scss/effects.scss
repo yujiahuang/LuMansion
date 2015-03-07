@@ -2,6 +2,14 @@
 
 /*------- effects -------*/
 
+[lazy-bg-image], [lazy-image] {
+  opacity: 0;
+  @include browser-prefix("transition", "all 0.1s linear");
+  &[loaded=true] {
+    opacity: 1;
+  }
+}
+
 [zoom] {
 
   @include browser-prefix(transform, scale(1) );

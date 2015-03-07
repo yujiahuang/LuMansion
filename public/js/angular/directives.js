@@ -39,18 +39,17 @@ app.directive('scrollToBricks', function($window) {
 
         // scroll to bricks
         if(element.offset().top <= $("body").height() - element.height()){
-          console.log("blah");
-          $("body").animate({scrollTop: element.offset().top - $("#navbar").height() + 1}, "slow");
+          $("html, body").animate({scrollTop: element.offset().top - $("#navbar").height() + 1}, "slow");
         }
         else {
           console.log(element.offset().top +" "+ $("#content").height() +" "+ element.height());
-          $("body").animate({scrollTop: $("body").scrollTop() + $("#content").height() - element.height() + 1}, "slow");
+          $("html, body").animate({scrollTop: $(document).scrollTop() + $("#content").height() - element.height() + 1}, "slow");
         }
 
         // back to top
         if(scope.revert_instruction){
           // console.log("revert");
-          $("body").stop().animate({scrollTop: 0}, "fast");
+          $("html, body").stop().animate({scrollTop: 0}, "fast");
         }
       });
 
@@ -71,8 +70,29 @@ app.directive('scrollToBricks', function($window) {
   }
 });
 
+app.directive('lazyImage', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.bind('load', function() {
+        element.attr('loaded', true);
+      });
+    }
+  };
+});
 
-
-
+app.directive('lazyBgImage', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      var img = new Image();
+      img.onload = function(){
+        element[0].style.backgroundImage = 'url(' + img.src + ')';
+        element.attr('loaded', true);
+     };
+     img.src = attrs.lazyBgImage;
+    }
+  };
+});
 
 

@@ -28,5 +28,8 @@ node_modules
 # sass
 .sass-cache
 
-#images
+# images
 public/images/temp
+
+# keys
+LuMansion.pem

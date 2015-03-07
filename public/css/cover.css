@@ -72,7 +72,7 @@
   background: rgba(51, 51, 51, 0.9);
   color: #f9f9f9;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   z-index: 200;
   cursor: pointer; }
   .instruction div {
@@ -88,26 +88,28 @@
       .instruction.stick {
         top: 240px; } }
 
-.instruction.slide-instruction div {
-  padding: 0; }
-  .instruction.slide-instruction div::after {
-    content: "向下捲動看更多介紹";
-    letter-spacing: 2px; }
-  .instruction.slide-instruction div::before {
-    position: absolute;
-    line-height: 48px;
-    left: -32px;
-    font-size: 24px;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
-    -webkit-animation: bounce 0.8s ease-out 0s 12 alternate;
-    -moz-animation: bounce 0.8s ease-out 0s 12 alternate;
-    -ms-animation: bounce 0.8s ease-out 0s 12 alternate;
-    -o-animation: bounce 0.8s ease-out 0s 12 alternate;
-    animation: bounce 0.8s ease-out 0s 12 alternate; }
+.instruction.slide-instruction {
+  font-size: 18px; }
+  .instruction.slide-instruction div {
+    padding: 0; }
+    .instruction.slide-instruction div::after {
+      content: "向下捲動看更多介紹";
+      letter-spacing: 2px; }
+    .instruction.slide-instruction div::before {
+      position: absolute;
+      line-height: 48px;
+      left: -32px;
+      font-size: 24px;
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -webkit-animation: bounce 0.8s ease-out 0s 12 alternate;
+      -moz-animation: bounce 0.8s ease-out 0s 12 alternate;
+      -ms-animation: bounce 0.8s ease-out 0s 12 alternate;
+      -o-animation: bounce 0.8s ease-out 0s 12 alternate;
+      animation: bounce 0.8s ease-out 0s 12 alternate; }
 @-webkit-keyframes bounce {
   0% {
     -webkit-transform: rotate(90deg) translate(3px, 0);
@@ -173,22 +175,22 @@
     -moz-transform: rotate(90deg) translate(-3px, 0);
     -o-transform: rotate(90deg) translate(-3px, 0);
     transform: rotate(90deg) translate(-3px, 0); } }
-.instruction.slide-instruction.revert div::after {
-  content: "回到最上方"; }
-.instruction.slide-instruction.revert div::before {
-  position: absolute;
-  left: -32px;
-  font-size: 24px;
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -webkit-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
-  -moz-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
-  -ms-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
-  -o-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
-  animation: bounce-revert 0.8s ease-out 0s 12 alternate; }
+  .instruction.slide-instruction.revert div::after {
+    content: "回到最上方"; }
+  .instruction.slide-instruction.revert div::before {
+    position: absolute;
+    left: -32px;
+    font-size: 24px;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
+    -moz-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
+    -ms-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
+    -o-animation: bounce-revert 0.8s ease-out 0s 12 alternate;
+    animation: bounce-revert 0.8s ease-out 0s 12 alternate; }
 @-webkit-keyframes bounce-revert {
   0% {
     -webkit-transform: rotate(-90deg) translate(3px, 0);
@@ -254,11 +256,11 @@
     -moz-transform: rotate(-90deg) translate(-3px, 0);
     -o-transform: rotate(-90deg) translate(-3px, 0);
     transform: rotate(-90deg) translate(-3px, 0); } }
-@media (max-width: 1040px) {
-  .instruction.slide-instruction {
-    display: none; } }
-@media (max-width: 740px) {
-  .instruction.slide-instruction {
-    display: block; } }
+  @media (max-width: 1040px) {
+    .instruction.slide-instruction {
+      display: none; } }
+  @media (max-width: 740px) {
+    .instruction.slide-instruction {
+      display: block; } }
 
 /*# sourceMappingURL=cover.css.map */

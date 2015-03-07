@@ -6,8 +6,6 @@
 
   position: relative;
   z-index: 1200;
-  // margin: $nav-height*(-1) 0 0 0;
-  // padding: 0 0 $nav-height 0;
   background: $light-gray;
   height: 100%;
   box-sizing: content-box;
@@ -146,13 +144,15 @@
       padding-left: 50px;
       color: $semi-dark-gray;
       position: absolute;
-      right: 18%;
+      // right: 18%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
       
       p {
 
         text-align: left;
         font-size: 16px;
-        line-height: 2em;
         padding: 10px 0 5px 0;
         margin: 0;
 
@@ -162,6 +162,9 @@
           padding: 30px 0 10px 0;
           color: $red;
           letter-spacing: 2px;
+        }
+        &.product-origin {
+          line-height: 1.7em;
         }
         &.product-subtitle, &.product-origin-title {
           padding-top: 20px;

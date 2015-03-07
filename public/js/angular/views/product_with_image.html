@@ -1,0 +1,31 @@
+<div class="product-view" id="{{state}}" view-zoom>
+  <div id="toolbox-bottom"></div>
+  <div id="info">
+    <div class="img-wrapper">
+      <img ng-src="/images/{{last_state}}/{{state}}/{{product.name}}.jpg" alt="" lazy-image>
+    </div>
+    <div class="description">
+      <p class="product-title">[ {{product.name}} ]</p>
+      <p class="product-subtitle"><span>{{product.real_name}}</span><span ng-show="product.price>0"> / ${{product.price}}</span></p>
+      <p class="product-description" ng-bind="product.description"></p>
+      <p class="product-origin-title" ng-show="product.origin[0].length>0" ng-bind="origin_title"></p>
+      <p class="product-origin" ng-repeat="o in product.origin" ng-bind="o"></p>
+    </div>
+  </div>
+  <div id="toolbox-top">
+    <div class="menu" ng-click="show_nav=true">
+      <div class="middle-bar"></div>
+    </div>
+    <div class="close" spin ui-sref="{{last_state}}"></div>
+  </div>
+  <div class="product-navbar" ng-show="show_nav">
+    <div class="hide-nav" ng-click="show_nav=false">
+      <div></div>
+    </div>
+    <ul>
+      <li ng-repeat="item in navbar_items">
+        <a href="" ui-sref="{{item.state}}" ng-bind="item.name"></a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -35,7 +35,7 @@ app.controller('galleryCtrl', ['$scope', '$rootScope', '$state', 'content', '$lo
   $scope.filter = function(type){
 
     $scope.type = type;
-    $("body").stop().animate({scrollTop: $(".gallery").height() * 0.8 - 48}, "fast");
+    $("html, body").stop().animate({scrollTop: $(".gallery").height() * 0.8 - 48}, "fast");
 
   }
 

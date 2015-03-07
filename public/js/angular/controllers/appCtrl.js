@@ -23,7 +23,6 @@ app.controller('appCtrl', ['$scope', '$rootScope', '$window', '$state', 'navbar'
   });
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     $scope.state = $state.current.name;
-    console.log($scope.state);
 
   });
 

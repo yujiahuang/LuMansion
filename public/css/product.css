@@ -93,11 +93,12 @@
       padding-left: 50px;
       color: #666;
       position: absolute;
-      right: 18%; }
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
       .product-view #info .description p {
         text-align: left;
         font-size: 16px;
-        line-height: 2em;
         padding: 10px 0 5px 0;
         margin: 0; }
         .product-view #info .description p.product-title {
@@ -106,6 +107,8 @@
           padding: 30px 0 10px 0;
           color: #a80d10;
           letter-spacing: 2px; }
+        .product-view #info .description p.product-origin {
+          line-height: 1.7em; }
         .product-view #info .description p.product-subtitle, .product-view #info .description p.product-origin-title {
           padding-top: 20px;
           color: #a80d10;

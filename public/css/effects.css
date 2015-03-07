@@ -1,4 +1,14 @@
 /*------- effects -------*/
+[lazy-bg-image], [lazy-image] {
+  opacity: 0;
+  -webkit-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+  [lazy-bg-image][loaded=true], [lazy-image][loaded=true] {
+    opacity: 1; }
+
 [zoom] {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);

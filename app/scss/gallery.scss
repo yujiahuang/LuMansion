@@ -3,6 +3,19 @@ $animation-duration: 0.6s;
 
 /*------- gallery -------*/
 
+// when no images
+#art {
+  .product {
+    height: 300px;
+  }
+}
+#menu {
+  .product {
+    height: 258px;
+  }
+}
+// temporary
+
 .gallery {
 
   width: 100%;
@@ -230,9 +243,9 @@ $animation-duration: 0.6s;
 
         .full-display {
 
-          visibility: visible;
-          opacity: 1;
-          @include browser-prefix(transition, opacity ease $animation-duration);
+          // visibility: visible;
+          // opacity: 1;
+          // @include browser-prefix(transition, opacity ease $animation-duration);
 
         }
 
