@@ -30,7 +30,7 @@ app.factory('footer', function(){
   today = new Date();
   return [
 
-    "天開藏聆・異想盧經堂厝",
+    "天開藏聆・異想盧經堂厝 (06)2231833",
     "台南市安平區安平路 802 號",
     "Copyright © " + today.getFullYear() + " 異想電影有限公司. All rights reserved"
 
