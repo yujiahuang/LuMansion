@@ -81,7 +81,7 @@
         span {
 
           font-size: 1.7em;
-          text-align: left;
+          // text-align: justify;
 
         }
         &.balance {
@@ -93,7 +93,7 @@
             margin: 0;
           }
           @media (max-width: $tablet) {
-            text-align: left;
+            text-align: justify;
             br {
               display: none;
             }

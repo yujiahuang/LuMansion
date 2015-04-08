@@ -144,11 +144,14 @@
       padding-left: 50px;
       color: $semi-dark-gray;
       position: absolute;
-      // right: 18%;
       left: 0;
       right: 0;
       margin: 0 auto;
       
+      @media(max-width: $phone) {
+        width: 60%;
+        padding-left: 0;
+      }
       p {
 
         text-align: left;

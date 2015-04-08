@@ -52,8 +52,7 @@
         position: relative;
         width: 100%; }
         .cover .cover-words-wrapper .cover-words .cover-description span {
-          font-size: 1.7em;
-          text-align: left; }
+          font-size: 1.7em; }
         .cover .cover-words-wrapper .cover-words .cover-description.balance {
           padding: 10px 0;
           text-align: center; }
@@ -62,7 +61,7 @@
             margin: 0; }
           @media (max-width: 1040px) {
             .cover .cover-words-wrapper .cover-words .cover-description.balance {
-              text-align: left; }
+              text-align: justify; }
               .cover .cover-words-wrapper .cover-words .cover-description.balance br {
                 display: none; } }
 

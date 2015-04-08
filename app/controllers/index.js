@@ -23,7 +23,8 @@ exports.menu = function(req, res){
   res.json( { 
 
     cover: {
-      title: "伸春餘・食堂",
+      title: "伸春餘",
+      subtitle: "食堂",
       description: [
       "我們把關品質口感，選用優質食材與澄淨水質，", 
       "呈現最純淨真實的美味，期望從舌尖回歸人與人自然純粹的關係。", 
@@ -125,7 +126,8 @@ exports.art = function(req, res){
   res.json( { 
 
     cover: {
-      title: "伸春餘・文創品",
+      title: "伸春餘",
+      subtitle: "文創品",
       description: [
       "我們把關品質口感，選用優質食材與澄淨水質，", 
       "呈現最純淨真實的美味，期望從舌尖回歸人與人自然純粹的關係。", 
