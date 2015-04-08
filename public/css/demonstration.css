@@ -17,11 +17,11 @@
           .demonstration .row .half .words-wrapper .words .title, .demonstration .row .full .words-wrapper .words .title {
             text-align: center; }
             .demonstration .row .half .words-wrapper .words .title h2, .demonstration .row .full .words-wrapper .words .title h2 {
-              font-size: 36px;
+              font-size: 2.5714em;
               font-weight: 200;
               margin: 0 0 30px 0; }
           .demonstration .row .half .words-wrapper .words .description, .demonstration .row .full .words-wrapper .words .description {
-            font-size: 20px;
+            font-size: 1.4286em;
             font-weight: 200;
             text-align: justify; }
             .demonstration .row .half .words-wrapper .words .description p, .demonstration .row .full .words-wrapper .words .description p {

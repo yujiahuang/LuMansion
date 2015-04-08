@@ -19,6 +19,9 @@ body {
   background: #f9f9f9; }
   body[fix-scroll="true"] {
     overflow: hidden; }
+  @media (max-width: 740px) {
+    body {
+      font-size: 10px; } }
 
 a {
   color: #a80d10;

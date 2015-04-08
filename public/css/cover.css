@@ -46,11 +46,13 @@
           font-weight: 200;
           padding: 0;
           margin: 0; }
+        .cover .cover-words-wrapper .cover-words .cover-title h2 {
+          font-size: 22px; }
       .cover .cover-words-wrapper .cover-words .cover-description {
         position: relative;
         width: 100%; }
         .cover .cover-words-wrapper .cover-words .cover-description span {
-          font-size: 19px;
+          font-size: 1.7em;
           text-align: left; }
         .cover .cover-words-wrapper .cover-words .cover-description.balance {
           padding: 10px 0;

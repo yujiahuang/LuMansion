@@ -230,7 +230,7 @@
         visibility: visible;
         position: absolute;
         top: 0;
-        right: 50px;
+        right: 0.6em;
         font-size: 24px;
         @include browser-prefix(transition, 0.2s ease)
 
