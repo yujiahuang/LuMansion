@@ -138,7 +138,7 @@
       height: 120px; }
       #navbar[expand=true] {
         overflow: hidden;
-        height: 430px; }
+        height: 360px; }
         #navbar[expand=true] #brand::before {
           -webkit-transform: rotate(540deg);
           -ms-transform: rotate(540deg);
